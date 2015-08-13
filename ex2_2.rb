@@ -1,9 +1,7 @@
-# 素直な実装
 def ex
   yield
-rescue KeyError
-  "#{$!} (#{$!.class})"
-rescue StopIteration
+rescue IndexError
+  # 親クラスで、ひとまとめに rescue
   "#{$!} (#{$!.class})"
 end
 
@@ -18,8 +16,7 @@ ex{[].each.next}                # => "iteration reached an end (StopIteration)"
 
 # 捕捉できない例外
 ex{1 + "1"}
-
-# ~> -:20:in `+': String can't be coerced into Fixnum (TypeError)
-# ~> 	from -:20:in `block in <main>'
-# ~> 	from -:3:in `ex'
-# ~> 	from -:20:in `<main>'
+# ~> -:18:in `+': String can't be coerced into Fixnum (TypeError)
+# ~> 	from -:18:in `block in <main>'
+# ~> 	from -:2:in `ex'
+# ~> 	from -:18:in `<main>'
