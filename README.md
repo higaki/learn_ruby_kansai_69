@@ -18,8 +18,8 @@ ex{1 + "1"}  # => "String can't be coerced into Fixnum (TypeError)"
 ### 演習問題2
 いろいろな例外を発生させてみよう
 
-1. `KeyError` を捕捉しよう
-1. `KeyError` と `StopIteration` を捕捉しよう
+- `KeyError` を捕捉しよう
+- `StopIteration` も捕捉しよう
 
 ### 演習問題3
 以下のコードをデバッグしてみよう
